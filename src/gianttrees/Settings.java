@@ -51,6 +51,8 @@ public class Settings {
     }
 
     private void makeSettings(){
+        maxTreeHeight = 128;
+        maxTreeWidth = 16;
         File file = new File("plugins/Giant Trees/");
         file.mkdirs();
         file = new File("plugins/Giant Trees/config.txt");
@@ -61,10 +63,9 @@ public class Settings {
             out.write("Maximum Tree Width:16");
             out.newLine();
             out.close();
-            maxTreeHeight = 128;
-            maxTreeWidth = 16;
         }catch(Exception e){
-            e.printStackTrace();
+        	System.out.println("[Giant Trees] ERROR: Unable to create configuration file. (Insuffisient permissons?)");
+            //e.printStackTrace();
         }
     }
 
